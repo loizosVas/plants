@@ -1,0 +1,15 @@
+<!-- CREATE NEW PLANT -->
+<div class="card">
+
+  <div class="card-header">
+  		<h4>Add a new Plant</h4>
+  </div>
+
+  <div class="card-body">
+
+  	<br>
+    <%= render 'form', plant: @plant %>
+    <br>
+	<%= link_to 'Back', plants_path, class:"btn btn-dark", :style => 'width: -webkit-fill-available' %>
+  </div>
+</div>

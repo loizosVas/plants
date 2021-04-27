@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  plant_name: MyString
+  temperature: 1.5
+  humidity: 1.5
+  water: 1.5
+  light: MyString
+  soil: MyString
+  location: MyString
+
+two:
+  plant_name: MyString
+  temperature: 1.5
+  humidity: 1.5
+  water: 1.5
+  light: MyString
+  soil: MyString
+  location: MyString

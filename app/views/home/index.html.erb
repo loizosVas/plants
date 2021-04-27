@@ -1,0 +1,21 @@
+<!-- Home Page Welcome -->
+<div class="card">
+
+	<div class="card-header">
+		<h4>Welcome to My First Ruby on Rails Webpage</h4>
+	</div>
+
+	<div class="card-body">
+		<h5 class="card-title">On the 19th of April 2021, I have started coding with Ruby on Rails!</h5>
+		
+		In the 
+		<% if user_signed_in? %>
+			<%= link_to "About Us Page", home_about_path %>	
+		<% else %>
+			About Us Page (onced you logged in)
+		<% end %>
+		, you can find all the information you need to know regarding my learning process.
+		
+	</div>
+
+</div>

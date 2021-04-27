@@ -1,0 +1,56 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <!-- EDIT USER PROFILE -->
+  <div class="card">
+    <div class="card-header">
+      <h4>Edit Profile</h4>
+    </div>
+    <div class="card-body">
+      <div class="field form-group mb-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email", required:true %>
+      </div>
+
+      <div class="field form-group mb-3">
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"Current Password (we need your current password to confirm your changes)", required:true %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field form-group mb-3">
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"New Password (leave blank if you don't want to change it)", required:true %>
+      </div>
+
+      <div class="field form-group mb-3">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Password Confirmation", required:true %>
+      </div>
+
+      <div class="actions form-group">
+        <%= f.submit "Update", class:"btn btn-success", :style => 'width: -webkit-fill-available'%>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<br>
+<br>
+
+<!-- DELETE USER ACCOUNT -->
+<div class="card">
+  <div class="card-header">
+    <h4>Delete my Account</h4>
+  </div>
+  <div class="card-body">
+     <h5 class="card-title">Once you delete your account, it is permanently deleted from the database and cannot be restored!</h5>
+    <p><%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger", :style => 'width: -webkit-fill-available' %></p>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div style='margin: 0 250px'>
+  <%= link_to "Back to Home Page", :back, class:"btn btn-dark", :style => 'width: -webkit-fill-available' %>
+</div>

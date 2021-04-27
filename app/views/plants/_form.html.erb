@@ -1,0 +1,50 @@
+<%= form_with(model: plant) do |form| %>
+  <% if plant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
+
+      <ul>
+        <% plant.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group mb-3">
+    <%= form.text_field :plant_name, class:"form-control", placeholder:"Plant Name" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.text_field :temperature, class:"form-control", placeholder:"Temperature" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.text_field :humidity, class:"form-control", placeholder:"Humidity" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.text_field :water, class:"form-control", placeholder:"Water" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.text_field :light, class:"form-control", placeholder:"Light" %>
+  </div>
+  
+  <div class="field form-group mb-3">
+    <%= form.text_field :soil, class:"form-control", placeholder:"Soil" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.text_field :location, class:"form-control", placeholder:"Location" %>
+  </div>
+
+  <div class="field form-group mb-3">
+    <%= form.number_field :created_by, id: :plant_created_by, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-success", :style => 'width: -webkit-fill-available' %>
+  </div>
+<% end %>

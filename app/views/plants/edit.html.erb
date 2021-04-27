@@ -1,0 +1,22 @@
+<!-- EDIT Plant -->
+<div class="card">
+
+  <div class="card-header">
+  		<h4>Edit a Plant</h4>
+  </div>
+
+  <div class="card-body">
+
+  	<br>
+    <%= render 'form', plant: @plant %>
+    <br>
+
+    <div class="row justify-content-around">	
+	    <%= link_to 'Show', @plant, class:"btn btn-secondary col-5" %>
+		<%= link_to 'Back', plants_path, class:"btn btn-dark col-5"%>
+	</div>
+
+  </div>
+</div>
+
+<br><br>
