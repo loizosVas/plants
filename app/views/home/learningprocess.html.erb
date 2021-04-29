@@ -1,0 +1,420 @@
+<br>
+<br>
+
+<div class="accordion" id="accordionExample">
+
+  <!-- DAY 1 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button bg-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <h4 class="text-white">Phase A (19-20 Apr 2021): Introduction to Ruby on Rails (25h of work)</h4>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+       <h3 class="card-title">1. I followed this amazing tutorial shown below and covers the following topics:</h3>
+		
+		<br><br><br>
+
+		<div class="row">
+
+			<div class="col-sm-3">
+				<ol>
+					<li>Introduction & Installation</li>
+					<li>First Webpage and MVC Overview</li>
+					<li>Application Partial and New Pages</li>
+					<li>CRUD Scaffold</li>
+					<li>Style App with Bootstrap</li>
+					<li>Hadnle Alerts</li>
+					<li>Devise User Management</li>
+					<li>Style Device Views</li>
+					<li>Associations</li>
+					<li>More Associations</li>
+					<li>Style Modifications</li>
+					<li>Fun with the controller</li>
+					<li>Git, GitHub and Heroku</li>
+				</ol>
+			</div>
+
+			<div class="col-sm-9" style="padding-left:150px">
+				<iframe width="635" height="325" src="https://www.youtube.com/embed/fmyvWz5TUWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+
+		</div>
+
+		<br>
+		<hr>
+		<br>
+		
+		<h3 class="card-title">2. Installation Process</h3>
+		
+		<br>
+
+		<table class="table">
+
+			<thead>
+				<tr>
+				  <th scope="col">Sequence of Installation</th>
+				  <th scope="col">Technology</th>
+				  <th scope="col">Version</th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+				<tr>
+				  <th scope="row">1</th>
+				  <td>Node.js</td>
+				  <td>14.16.1</td>
+				</tr>
+
+				<tr>
+				  <th scope="row">2</th>
+				  <td>npm yarn</td>
+				  <td>1.22.5</td>
+				</tr>
+
+				<tr>
+				  <th scope="row">3</th>
+				  <td>Git Bash Terminal</td>
+				  <td>2.31.1</td>
+				</tr>
+
+				<tr>
+				  <th scope="row">4</th>
+				  <td>Sublime Text Editor</td>
+				  <td>3211</td>
+				</tr>
+
+
+				<tr>
+				  <th scope="row">5</th>
+				  <td >Rails Installer</td>
+				  <td>2.3</td>
+				</tr>
+
+				<tr>
+				  <th scope="row">6</th>
+				  <td>Upgrate Ruby</td>
+				  <td>2.7.2</td>
+				</tr>
+
+				<tr>
+				  <th scope="row">7</th>
+				  <td>Upgrade Rails</td>
+				  <td>6.1.3.1</td>
+				</tr>
+
+				<tr>
+				  <th scope="row">8</th>
+				  <td>Bootstrap</td>
+				  <td>5.0</td>
+				</tr>
+
+				<tr>
+				  <th scope="row">9</th>
+				  <td>Devise from RubyGems</td>
+				  <td>4.7.3</td>
+				</tr>
+
+				<tr>
+				  <th scope="row">10</th>
+				  <td>Heroku CLI</td>
+				  <td>7.52.0</td>
+				</tr>
+
+				<tr>
+				  <th scope="row">11</th>
+				  <td>Upgrade splite3 to PG</td>
+				  <td>1.2.3</td>
+				</tr>
+
+			</tbody>
+		</table>
+
+		<br>
+		<hr>
+		<br>
+		
+		<h3 class="card-title">3. Simple Database webpage</h3>
+		<br>
+
+
+		Created a new page to store a table of friends as shown in the Friends Page. Each friend has a <i>first name</i>, <i>last name</i>, <i>email</i>, <i>phone-number</i> and <i>twitter account</i>! Using sqlite I can store such data on the local database. The website provides further functionality such as <b>Create</b>, <b>Read</b>, <b>Update</b> and <b>Delete</b> queries.
+
+		<br>
+		<hr>
+		<br>
+		
+		<h3 class="card-title">4. Functional User Management using Devise</h3>
+		<br>
+
+		Users can now <b>Register</b> on the Website, <b>Edit their Profile</b> and <b>Delete their Profile</b>. (In the future Administrators may manage and <b>Read</b> this data except sensitive data).
+
+		<br>
+		<hr>
+		<br>
+		
+		<h3 class="card-title">5. Rails Associations</h3>
+		<br>
+		<ul>
+			<li>I added a <code>user_id (index) of type integer</code> to table of <b>Friends</b>.</li>
+			<li>I added another <code>id</code> to hold the user who created a <b>Friend</b>.</li>
+			<li>Each user can only <b>Show</b>, <b>Edit</b>, <b>Update</b> and  <b>Destroy</b> friends that ware created only by that account ONLY.</li>
+			<li>If a user tries to <b>Show</b>, <b>Edit</b>, <b>Update</b> and  <b>Destroy</b> a friend that was created by another account it will get notified with <i>"Not authorized to edit friend"</i>!</li>
+		</ul>
+
+		<br>
+		<hr>
+		<br>
+		
+		<h3 class="card-title">6. Code and Front-End Clean-Up</h3>
+		
+		<br>
+		<ul>
+		  <li>Combined <code>First Name</code> and <code>Last Name</code> to one column called <code>Full Name</code>!</li>
+		  <li><code>Full Name</code> is now a <u>link</u> to the <b>Show Page</b> of each <b>Friend</b>!</li>
+		  <li>Removed the <b>Edit</b> column since it can be found on the <b>Show Friend</b> Page!</li>
+		  <li>Changed <b>Destroy</b> link to a button and renamed it <b>Delete!</b></li>
+		</ul>  
+		<br>
+		Added some more style modifications on <b>Add a new Friend</b>, <b>Edit Friend</b> and <b>Show Friend</b> Pages!
+
+
+		<br>
+		<hr>
+		<br>
+		
+		<h3 class="card-title">7. Git, GitHub and Heroku</h3>
+		
+		<br>
+		<ul>
+		  <li>Created an account in <b>GitHub</b> and <b>Heroku</b>!</li>
+		  <li>Created a <b>GitHub Repository</b> in the following <a href="https://github.com/loizosVas/Ruby_on_rails">github repo</a>!</li>
+		  <li>Created a <b>Heroku App</b> and renamed it, in the following <a href="https://railsfriends46.herokuapp.com/">link</a>!</li>
+		  <li>Having issues with converting the <code>sqlite3</code> database gem to <code>pg</code> that is requested by <b>Heroku</b></li>
+		  <li>CANNOT deploy project on Heroku. To be continued tomorrow until I get reply from <a href="https://stackoverflow.com/questions/67183372/deploy-ruby-rails-app-on-heroku-doesnt-work-gems-issue-with-sqlite3-and-pg?noredirect=1#comment118757619_67183372">Stack Overflow</a>!</li>
+		  <li><b>Possible reason: </b><code>The current issue is that the line endings are windows CR\LF (\r\n) rather than standard unix LF (\n)!</code></li>
+		</ul> 
+
+		<br>
+		<hr>
+		<br>
+		
+		<h3 class="card-title">8. Fix Issues</h3>
+		
+		<br>
+		<ul>
+		  <li><b>Started the whole project from the beginning!</b></li>
+		  <li><b>Changed the table of <code>Friends</code> to a new table to hold <code>PLANTS</code>!</b></li>
+		  
+		  <li><b>The new table <code>PLANTS</code> has the following columns:</b></li>
+		  <ul>
+		  	<li>Plant ID (invisible: required for db management)</li>
+		  	<li>Plant Name</li>
+		  	<li>Temperature</li>
+		  	<li>Humidity</li>
+		  	<li>Water Consumption</li>
+		  	<li>Light</li>
+		  	<li>Soil</li>
+		  	<li>Location</li>
+		  	<li>Created by User (invisible: required for db associations)</li>
+		  </ul>
+
+		  <li><b>Hosted on GitHub and Heroku with no issues!</b></li>
+		  <li><b>URL for GitHub : </b><a href="https://github.com/loizosVas/plants">GitHub Repository</a></li>
+		  <li><b>URL for Heroku : </b><a href="https://plantslist.herokuapp.com/">Heroku App</a></li>
+		</ul>  
+		<br>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase B -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button bg-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <h4 class="text-white">Phase B (21-23 Apr 2021): Modifications to the initial project (15h of work)</h4>
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+		<div class="accordion-body">
+
+      		<h3 class="card-title">1. Planning Ahead:</h3>
+		
+			<br>
+       		
+       		<h5 class="card-title">User Accounts:</h5>
+       
+       		<ul>
+       			<li>When creating an accound users should get a confirmation link that expires after 30 minutes via email.</li>
+       			<li>Users should get notified via email when changing a password.</li>
+       			<li>Users should be able to receive temporary password on their email (Forgot my Password).</li>
+       		</ul>
+
+       		<br>
+   			<h5 class="card-title">Website Functionality:</h5>
+       
+       		<ul>
+       			<li>Should have a list of favorite Plants.</li>
+       			<li>Should be able to sort table accordingly for each column (i.e. decending or ascending alphabetical order).</li>
+       		</ul>
+
+       		<br>
+   			<h5 class="card-title">Project Idea:</h5>
+       
+       		<p>The concept of this website is to create a system where users can add their favourite plants in their list. Ideally that list is going to be used by users to grow their plants in real life. Each plant in the list would have a name <b>and somehow collect data regarding that specific plant (see Phase C)</b>, such as:</p>
+
+       		<ul>
+			  <li>Plant ID (invisible: required for db management)</li>
+			  	<li>Plant Name</li>
+			  	<li>Temperature</li>
+			  	<li>Humidity</li>
+			  	<li>Water Consumption</li>
+			  	<li>Light</li>
+			  	<li>Soil</li>
+			  	<li>Location</li>
+			  	<li>Created by User (invisible: required for db associations)</li>
+			</ul> 
+       
+			<p>The user would be able to <b>connect an Arduino curcuit</b>, that would collect data regarding the plant. Additionally, it can control water and fertilizer that the plant needs and other parameters such as notify users if the soil is too moist for a specific plant, and more!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase C -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button bg-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <h4 class="text-white">Phase C (27-28 Apr 2021): Find a Database to collect information of an edible plant automatically</h4>
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+		<div class="accordion-body">
+
+      		<h3 class="card-title">1. Wikipedia and WikiData</h3>
+		
+			<br>
+       		
+       		<h5 class="card-title">Wikipedia:</h5>
+       		
+       		<ul>
+       			<li>Cannot be used for several reasons:</li>
+       			<ol>
+       				<li>When a users search on wikipedia using the keyword <code>Mint</code> the results from wikipedia are somehow unrelated (e.g. Mint Candy or Linux Mint).</li>
+       				<li>Let's say that the user has selected the correct wikipedia article for <code>Mint</code> which is actually called <code>Sparemint</code> the information are limiteless.</li>
+       				<li>There is no way to extract data from a whole page of plain text</li>
+       			</ol>
+       			<li>Created a p5js project to experiment with this and the results cannot be used for this project</li>
+       		</ul>
+
+			<pre class="line-numbers" style="height: 300px; overflow: scroll; background-color: lightgray;">
+			  <code class="language-javascript">
+	let url_title = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=";
+	let url_content = "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=";
+
+	//incategory:"House plants" insource:"mint"
+	//deepcategory:"Ornamental plants" insource:"mint"
+
+	let userInput;
+
+	function setup() {
+	  
+	  noCanvas();
+	  userInput = select("#userinput");
+	  userInput.changed(submitQuery);
+	  
+	  function submitQuery(){
+
+	    let term = userInput.value();
+	    let url = url_title + term;
+	    loadJSON(url, getTitleResults, 'jsonp');
+	  }
+	  
+	  function getTitleResults(data){
+	    
+	    //Get the first result from the search
+	    let title = data[1][0];
+	    //replace space with undescores
+	    title = title.replace(/\s+/g, '_');
+	    let h1 = createElement("h1", title);
+	    let url = url_content + title;
+	    
+	    loadJSON(url, getContentResults, 'jsonp');
+	  }
+	  
+	  function getContentResults(data) {
+	    let pages = data.query.pages;
+	    let pageID = Object.keys(pages)[0];
+	    let content = pages[pageID].revisions[0]['*'];
+	    
+	    let p = createElement("p", pageID);
+	    //let p = createElement("p", content);
+	  }
+	}
+
+			  </code>
+			</pre>
+
+       		<ul>
+       			<li>Wikipedia is discarded!</li>
+       		</ul>
+
+       		<br>
+   			<h5 class="card-title">WikiData:</h5>
+       
+       		<ul>
+       			<li>Too complex!</li>
+       			<li>Requires SPARQL which is diffucult to read!</li>
+       			<li>No information regarding the plants.</li>
+       			<li>Can only retrieve plant names!</li>
+       			<li>Example of Wikidata Query Service: <a href="https://w.wiki/3Fjf">RESULTS FROM QUERY USED BELOW</a></li>
+       		</ul>
+
+			<pre class="line-numbers" style="height: 200px; background-color: lightgray;">
+			  	<code class="language-javascript">
+	SELECT ?itemLabel 
+	WHERE 
+	{
+	  ?item wdt:P31 wd:Q2095.  # item with instance of food
+	  ?item wdt:P279 wd:Q756 . # item with subclass of plant 
+	  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+	}
+       			</code>
+			</pre>
+			<ul>
+				<li>WikiData is discarded!</li>
+			</ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase D -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFour">
+      <button class="accordion-button bg-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        <h4 class="text-white">Phase D (29 Apr 2021): Alternative Dataset</h4>
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+		<div class="accordion-body">
+
+      		<h3 class="card-title">1. University of Dundee Dataset of Edible Plants</h3>
+		
+			<br>
+
+       		<ul>
+			  	<li>Reference <a href="https://discovery.dundee.ac.uk/en/datasets/edible-plant-database">link</a>!</li>
+			  	<li>Downloaded <code>ReadMe</code> file</li>
+			  	<li>Downloaded <code>Edible_Plant_Database_description.docx</code>!</li>
+			  	<li>Downloaded <code>PlantingCalendar.xlsx</code>!</li>
+			  	<li>Downloaded <code>plant1.accdb</code>!</li>
+			  	<li>Interesting Datasets. Developer can work with this until there is a better dataset, but is a good starting point!</li>
+			</ul> 
+
+			<p>Have to find a way to connect database with ruby on rails application!</p>
+      </div>
+    </div>
+  </div>
+</div>

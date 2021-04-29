@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   	get 'home/about'
 
+  	get 'home/learningprocess'
+
   	resources :plants
 
   	devise_for :users
