@@ -1,37 +1,47 @@
-<table class="table table-striped table-bordered table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th>Plant name</th>
-      <th>Temperature</th>
-      <th>Humidity</th>
-      <th>Water</th>
-      <th>Light</th>
-      <th>Soil</th>
-      <th>Location</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+<h1>My List of Edible Plants</h1>
 
-  <tbody>
-    <% @plants.each do |plant| %>
-      <% if plant.user == current_user %>
-        <tr>
-          <td><%= link_to plant.plant_name, plant %></td>
-          <td><%= plant.temperature %></td>
-          <td><%= plant.humidity %></td>
-          <td><%= plant.water %></td>
-          <td><%= plant.light %></td>
-          <td><%= plant.soil %></td>
-          <td><%= plant.location %></td>
-          <td class="text-center">
-              <%= link_to 'Delete', plant, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %>
-          </td> 
-        </tr>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th colspan="2"></th>
+        <th>Taxonomic Name</th>
+        <th>Common Name</th>
+        <th>Cultivation Group</th>
+        <th>Temperature Class</th>
+        <th>Water Requirements</th>
+        <th>Nutritional Information</th>
+        <th>Image</th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @plants.each do |plant| %>
+        <% if plant.user == current_user %>
+          <tr>
+            <td>
+                <%= link_to '', plant, class:"bi bi-eye-fill text-primary visible" %>
+            </td>
+            <td>
+              <%= link_to '', plant, method: :delete, data: { confirm: 'delete' }, class:"bi bi-trash-fill text-danger visible" %>
+            </td>
+            <td><%= plant.taxon_name %></td>
+            <td><%= link_to plant.common_name, plant %></td>
+            <td><%= plant.cultivation_group %></td>
+            <td><%= plant.temperature_class %></td>
+            <td><%= plant.water_requirements %></td>
+            <td><%= plant.nutritional_information %></td>
+            <td>
+              <img src="data:image/jpeg;base64,<%= plant.image %>" style="width:100px; height:auto;">
+            </td>
+            
+          </tr>
+        <% end %>
       <% end %>
-
-    <% end %>
-  </tbody>
-</table>
-
+    </tbody>
+  </table>
+</div>
 <br>
-<%= link_to 'Add a New Plant', new_plant_path, class:"btn btn-primary" %>
+
+<%= link_to 'New Plant', new_plant_path, class:"btn btn-primary" %>

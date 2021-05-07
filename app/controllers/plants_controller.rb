@@ -72,6 +72,33 @@ class PlantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def plant_params
-      params.require(:plant).permit(:plant_name, :temperature, :humidity, :water, :light, :soil, :location, :created_by)
+      params.require(:plant).permit(
+        :taxon_name, 
+        :common_name, 
+        :cultivation_group, 
+        :general_description, 
+        :nutritional_information,
+        :min_preferred_pH, 
+        :max_preferred_pH, 
+        :water_requirements, 
+        :energy_value, 
+        :sunlight_requirements, 
+        :temperature_class, 
+        :nutrient_requirement, 
+        :plant_requirements, 
+        :soil, 
+        :optimum_germination_temperature, 
+        :days_to_germination_at_optimum_temperature, 
+        :min_plant_growing_ideal_temperature, 
+        :max_plant_growing_ideal_temperature, 
+        :descriptive_growing_season,
+        :min_length_of_growing_harvest,
+        :max_length_of_growing_harvest,
+        :sensitivities, 
+        :desease_management, 
+        :pests_pathogens, 
+        :image, 
+        :created_by
+      )
     end
 end

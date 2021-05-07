@@ -1,16 +1,46 @@
-ActiveRecord::Schema.define(version: 2021_04_27_111702) do
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 2021_05_07_171541) do
 
   create_table "plants", force: :cascade do |t|
-    t.string "plant_name"
-    t.float "temperature"
-    t.float "humidity"
-    t.float "water"
-    t.string "light"
-    t.string "soil"
-    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "created_by"
+    t.string "taxon_name"
+    t.string "common_name"
+    t.string "cultivation_group"
+    t.text "general_description"
+    t.text "nutritional_information"
+    t.float "min_preferred_pH"
+    t.float "max_preferred_pH"
+    t.string "water_requirements"
+    t.float "energy_value"
+    t.string "sunlight_requirements"
+    t.string "temperature_class"
+    t.string "nutrient_requirement"
+    t.text "plant_requirements"
+    t.string "soil"
+    t.string "optimum_germination_temperature"
+    t.string "days_to_germination_at_optimum_temperature"
+    t.float "min_plant_growing_ideal_temperature"
+    t.float "max_plant_growing_ideal_temperature"
+    t.string "descriptive_growing_season"
+    t.float "min_length_of_growing_harvest"
+    t.float "max_length_of_growing_harvest"
+    t.text "sensitivities"
+    t.text "desease_management"
+    t.text "pests_pathogens"
+    t.binary "image"
     t.index ["created_by"], name: "index_plants_on_created_by"
   end
 

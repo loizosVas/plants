@@ -1,38 +1,190 @@
 <div class="p-5 mb-4 bg-light rounded-3">
-  <h1 class="display-4"><%= @plant.plant_name %></h1>
 
-  <p>
-    <strong>Temperature:</strong>
-    <%= @plant.temperature %>
-  </p>
+  <div class="container">
+    <div class="row">
 
-  <p>
-    <strong>Humidity:</strong>
-    <%= @plant.humidity %>
-  </p>
+      <h1 class="display-2">Plant Description:</h1> 
+      <br><br><br><br><br>
 
-  <p>
-    <strong>Water:</strong>
-    <%= @plant.water %>
-  </p>
+      <div class="col-sm-4 img-responsive">
 
-  <p>
-    <strong>Soil:</strong>
-    <%= @plant.soil %>
-  </p>
-
-  <p>
-    <strong>Light:</strong>
-    <%= @plant.light %>
-  </p>
-
-  <p>
-    <strong>Location:</strong>
-    <%= @plant.location %>
-  </p>
+        <% if @plant.image != "" %>
+          <img src="data:image/jpeg;base64,<%= @plant.image %>" title="<%= @plant.taxon_name %> : <%= @plant.common_name %>" style="object-fit: cover; width:100%; height:95%;">
+        <% else %>
+          <span style="color:red; display:inline">No image provided for this plant!</span>
+        <% end %>
 
 
+      </div>
 
+      <div class="col-sm-8">
+
+        <p>
+          <strong>Taxon name:</strong>
+          <%= @plant.taxon_name %>
+        </p>
+
+        <p>
+          <strong>Common name:</strong>
+          <%= @plant.common_name %>
+        </p>
+
+        <p>
+          <strong>Cultivation group:</strong>
+          <%= @plant.cultivation_group %>
+        </p>
+
+        <p>
+          <strong>General description:</strong>
+          <textarea rows="3" style="width:100%; overflow:hidden;" readonly>
+            <%= @plant.general_description %>
+          </textarea>
+        </p>
+
+        <p>
+          <strong>Nutritional Information:</strong>
+
+          <textarea rows="3" style="width:100%; overflow:hidden;" readonly>
+            <%= @plant.nutritional_information %>
+          </textarea>
+        </p>
+      </div>
+
+      <hr>
+      <div class="row">
+        
+        <h1 class="display-2">Requirements:</i> </h1> 
+        <br><br><br><br><br>
+
+        <div class="col-sm-7">  
+
+          <!-- Draw pH Spectrum showing minimum and maximum pH levels -->
+          <%= render 'plants/javascripts/ph_spectrum' %>
+
+        </div>
+
+        <div class="col-sm-5">
+          <p>
+            <strong>Water requirements:</strong>
+
+            <span class="d-inline">
+              <%= render 'plants/javascripts/water_requirements' %>
+            </span>
+                  
+          </p>
+
+          <p>
+            <strong>Energy value:</strong>
+            <%= @plant.energy_value %>
+          </p>
+
+          <p>
+            <strong>Sunlight requirements:</strong>
+            <%= @plant.sunlight_requirements %>
+          </p>
+
+          <p>
+            <strong>Temperature class:</strong>
+            <%= @plant.temperature_class %>
+          </p>
+
+          <p>
+            <strong>Nutrient requirement:</strong>
+            <%= @plant.nutrient_requirement %>
+          </p>
+
+          <p>
+            <strong>Plant requirements:</strong>
+            <textarea rows="3" style="width:100%; overflow:hidden;" readonly>
+              <%= @plant.plant_requirements %>
+            </textarea>
+          </p>
+        </div>
+
+      </div>
+
+      <hr>
+      <div class="row">
+
+        <h1 class="display-2">Plantation:</i> </h1> 
+        <br><br><br><br><br>
+
+        <p>
+          <strong>Soil:</strong>
+          <%= @plant.soil %>
+        </p>
+
+        <p>
+          <strong>Optimum germination temperature:</strong>
+          <%= @plant.optimum_germination_temperature %>
+        </p>
+
+        <p>
+          <strong>Days to germination at optimum temperature:</strong>
+          <%= @plant.days_to_germination_at_optimum_temperature %>
+        </p>
+
+        <p>
+          <strong>Min plant growing ideal temperature:</strong>
+          <%= @plant.min_plant_growing_ideal_temperature %>
+        </p>
+
+        <p>
+          <strong>Max plant growing ideal temperature:</strong>
+          <%= @plant.max_plant_growing_ideal_temperature %>
+        </p>
+
+      </div>
+
+      <hr>
+      <div class="row">
+
+        <h1 class="display-2">Harvesting:</i> </h1> 
+        <br><br><br><br><br>
+
+        <p>
+          <strong>Descriptive growing season:</strong>
+          <%= @plant.descriptive_growing_season %>
+        </p>
+
+        <p>
+          <strong>Min length of growing harvest:</strong>
+          <%= @plant.min_length_of_growing_harvest %>
+        </p>
+
+        <p>
+          <strong>Max length of growing harvest:</strong>
+          <%= @plant.max_length_of_growing_harvest %>
+        </p>
+
+      </div>
+
+      <hr>
+      <div class="row">
+
+        <h1 class="display-2">Deseases and Warnings:</i> </h1> 
+        <br><br><br><br><br>
+
+        <p>
+          <strong>Sensitivities:</strong>
+          <%= @plant.sensitivities %>
+        </p>
+
+        <p>
+          <strong>Desease Management:</strong>
+          <textarea rows="3" style="width:100%; overflow:hidden;" readonly>
+            <%= @plant.desease_management %>
+          </textarea>
+        </p>
+
+        <p>
+          <strong>Pests and Pathogens:</strong>
+          <%= @plant.pests_pathogens %>
+        </p>
+      </div>
+
+    </div>
+  </div>
 
   <br>
   <%= link_to 'Edit', edit_plant_path(@plant), class:"btn btn-secondary" %>

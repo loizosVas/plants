@@ -11,40 +11,136 @@
     </div>
   <% end %>
 
-  <div class="field form-group mb-3">
-    <%= form.text_field :plant_name, class:"form-control", placeholder:"Plant Name" %>
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :taxon_name, class:"form-control", id:"floatingInput1", placeholder:"Full Taxonomic Name" %>
+    <label class="text-muted" for="floatingInput1">Full Taxonomic Name</label>
   </div>
 
-  <div class="field form-group mb-3">
-    <%= form.text_field :temperature, class:"form-control", placeholder:"Temperature" %>
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :common_name, class:"form-control", id:"floatingInput2", placeholder:"Common Name" %>
+    <label class="text-muted" for="floatingInput2">Common Name</label>
   </div>
 
-  <div class="field form-group mb-3">
-    <%= form.text_field :humidity, class:"form-control", placeholder:"Humidity" %>
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :cultivation_group, class:"form-control", id:"floatingInput3", placeholder:"Cultivation Group" %>
+    <label class="text-muted" for="floatingInput3">Cultivation Group</label>
   </div>
 
-  <div class="field form-group mb-3">
-    <%= form.text_field :water, class:"form-control", placeholder:"Water" %>
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_area :general_description, class:"form-control", id:"floatingInput4", placeholder:"General Description" %>
+    <label class="text-muted" for="floatingInput4">General Description</label>
   </div>
 
-  <div class="field form-group mb-3">
-    <%= form.text_field :light, class:"form-control", placeholder:"Light" %>
-  </div>
-  
-  <div class="field form-group mb-3">
-    <%= form.text_field :soil, class:"form-control", placeholder:"Soil" %>
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :min_preferred_pH, class:"form-control", id:"floatingInput5", placeholder:"MIN pH" %>
+    <label class="text-muted" for="floatingInput5">MIN pH</label>
   </div>
 
-  <div class="field form-group mb-3">
-    <%= form.text_field :location, class:"form-control", placeholder:"Location" %>
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :max_preferred_pH, class:"form-control", id:"floatingInput6", placeholder:"MAX pH" %>
+    <label class="text-muted" for="floatingInput6">MAX pH</label>
   </div>
 
-  <div class="field form-group mb-3">
-    <%= form.number_field :created_by, id: :plant_created_by, class:"form-control", value: current_user.id, type: :hidden %>
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :water_requirements, class:"form-control", id:"floatingInput7", placeholder:"Water Requirements" %>
+    <label class="text-muted" for="floatingInput7">Water Requirements</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :energy_value, class:"form-control", id:"floatingInput8", placeholder:"Energy Value" %>
+    <label class="text-muted" for="floatingInput8">Energy Value</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :sunlight_requirements, class:"form-control", id:"floatingInput9", placeholder:"Sunlight Requirements" %>
+    <label class="text-muted" for="floatingInput9">Sunlight Requirements</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :temperature_class, class:"form-control", id:"floatingInput10", placeholder:"Temperature Class" %>
+    <label class="text-muted" for="floatingInput10">Temperature Class</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :nutrient_requirement, class:"form-control", id:"floatingInput11", placeholder:"Nutrient Requirements" %>
+    <label class="text-muted" for="floatingInput11">Nutrient Requirements</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_area :plant_requirements, class:"form-control", id:"floatingInput12", placeholder:"Plant Requirements" %>
+    <label class="text-muted" for="floatingInput12">Plant Requirements</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :soil, class:"form-control", id:"floatingInput13", placeholder:"Soil" %>
+    <label class="text-muted" for="floatingInput13">Soil</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :optimum_germination_temperature, class:"form-control", id:"floatingInput14", placeholder:"Optimum Germination Temperature" %>
+    <label class="text-muted" for="floatingInput14">Optimum Germination Temperature</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :days_to_germination_at_optimum_temperature, class:"form-control", id:"floatingInput15", placeholder:"Days to Germination at Optimum Temperature" %>
+    <label class="text-muted" for="floatingInput15">Days to Germination at Optimum Temperature</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :min_plant_growing_ideal_temperature, class:"form-control", id:"floatingInput16", placeholder:"MIN Plant Growing Ideal Temperature" %>
+    <label class="text-muted" for="floatingInput16">MIN Plant Growing Ideal Temperature</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :max_plant_growing_ideal_temperature, class:"form-control", id:"floatingInput17", placeholder:"MAX Plant Growing Ideal Temperature" %>
+    <label class="text-muted" for="floatingInput17">MAX Plant Growing Ideal Temperature</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :descriptive_growing_season, class:"form-control", id:"floatingInput18", placeholder:"Descriptive Growing Season" %>
+    <label class="text-muted" for="floatingInput18">Descriptive Growing Season</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :min_length_of_growing_harvest, class:"form-control", id:"floatingInput19", placeholder:"MIN Length of Growing Harvest" %>
+    <label class="text-muted" for="floatingInput19">Length of Growing Harvest</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :max_length_of_growing_harvest, class:"form-control", id:"floatingInput20", placeholder:"MAX Length of Growing Harvest" %>
+    <label class="text-muted" for="floatingInput20">Length of Growing Harvest</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :sensitivities, class:"form-control", id:"floatingInput21", placeholder:"Sensitivities" %>
+    <label class="text-muted" for="floatingInput21">Sensitivities</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :desease_management, class:"form-control", id:"floatingInput22", placeholder:"Deasese Management" %>
+    <label class="text-muted" for="floatingInput22">Deasese Management</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_field :pests_pathogens, class:"form-control", id:"floatingInput23", placeholder:"Pests and Pathogens" %>
+    <label class="text-muted" for="floatingInput23">Pests and Pathogens</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.text_area :image, class:"form-control", id:"floatingInput25", placeholder:"Image (Use Base64 Binary only)" %>
+    <label class="text-muted" for="floatingInput25">Image (Use Base64 Binary only)</label>
+  </div>
+
+  <div class="field form-group mb-3 form-floating">
+    <%= form.number_field :created_by, id: :plant_created_by, class:"form-control", id:"floatingInput26", value: current_user.id, type: :hidden %>
+    <label class="text-muted" for="floatingInput26">CREATED BY USER (HIDDEN FORM)</label>
   </div>
 
 
   <div class="actions">
     <%= form.submit class:"btn btn-success", :style => 'width: -webkit-fill-available' %>
+    <label class="text-muted" for="floatingInput"></label>
   </div>
 <% end %>
+
+

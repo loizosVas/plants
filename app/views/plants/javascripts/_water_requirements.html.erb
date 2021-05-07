@@ -1,0 +1,65 @@
+<% if @plant.water_requirements == "Very High"%>       
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+  <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+
+<% elsif @plant.water_requirements == "High"%>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+
+<% elsif @plant.water_requirements == "Medium"%>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+
+<% elsif @plant.water_requirements == "Low"%>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+
+<% elsif @plant.water_requirements == "Very Low"%>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet-fill text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+    <i class="bi bi-droplet text-primary visible" title="<%= @plant.water_requirements %>"></i>
+
+<% else %>
+
+  <span style="color:red; display:inline">Water Required: type not recognized by the system!</span>
+
+<% end %>
