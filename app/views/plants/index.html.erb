@@ -4,7 +4,7 @@
   <table class="table table-striped table-bordered table-hover">
     <thead class="table-dark">
       <tr>
-        <th colspan="2"></th>
+        <th>#</th>
         <th>Taxonomic Name</th>
         <th>Common Name</th>
         <th>Cultivation Group</th>
@@ -12,7 +12,7 @@
         <th>Water Requirements</th>
         <th>Nutritional Information</th>
         <th>Image</th>
-        
+        <th colspan="2"></th>
       </tr>
     </thead>
 
@@ -20,12 +20,7 @@
       <% @plants.each do |plant| %>
         <% if plant.user == current_user %>
           <tr>
-            <td>
-                <%= link_to '', plant, class:"bi bi-eye-fill text-primary visible" %>
-            </td>
-            <td>
-              <%= link_to '', plant, method: :delete, data: { confirm: 'delete' }, class:"bi bi-trash-fill text-danger visible" %>
-            </td>
+            <td><%= plant.id %></td>
             <td><%= plant.taxon_name %></td>
             <td><%= link_to plant.common_name, plant %></td>
             <td><%= plant.cultivation_group %></td>
@@ -35,7 +30,12 @@
             <td>
               <img src="data:image/jpeg;base64,<%= plant.image %>" style="width:100px; height:auto;">
             </td>
-            
+            <td>
+                <%= link_to '', plant, class:"bi bi-eye-fill text-primary visible" %>
+            </td>
+            <td>
+              <%= link_to '', plant, method: :delete, data: { confirm: 'delete' }, class:"bi bi-trash-fill text-danger visible" %>
+            </td>
           </tr>
         <% end %>
       <% end %>
