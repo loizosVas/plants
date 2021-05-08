@@ -22,21 +22,27 @@
 		canvas.style("padding", "0px 100px 50px 0px");
 	  
   		//Capture min and max pH of plant:
-	    <% if @plant.min_preferred_pH != nil and @plant.max_preferred_pH != nil %>
+  		<% if @plant %>
+		    <% if @plant.min_preferred_pH != nil and @plant.max_preferred_pH != nil %>
 
-	      //Get min and max PH and store in variables
-	      let min_pH = <%= @plant.min_preferred_pH %>;
-	      let max_pH = <%= @plant.max_preferred_pH %>;
-	      
+		      //Get min and max PH and store in variables
+		      let min_pH = <%= @plant.min_preferred_pH %>;
+		      let max_pH = <%= @plant.max_preferred_pH %>;
+		      
+		      //Apply input on spectrum:
+		      draw_ph_spectrum();
+		      draw_preferred_ph(min_pH, max_pH);
 
-	      //Apply input on spectrum:
-	      draw_ph_spectrum();
-	      draw_preferred_ph(min_pH, max_pH);
-
+		    <% else %>
+		      //Don't draw spectrum if the input is invalid:
+		      invalidInput();
+		    <% end %>
 	    <% else %>
-	      //Don't draw spectrum if the input is invalid:
-	      invalidInput();
+	    	//Learning Process Page:
+		    draw_ph_spectrum();
+			draw_preferred_ph(3.1, 6.9);
 	    <% end %>
+
 
 	}
 

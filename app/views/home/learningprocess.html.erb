@@ -410,7 +410,7 @@
 			  	<li>Downloaded <code>Edible_Plant_Database_description.docx</code>!</li>
 			  	<li>Downloaded <code>PlantingCalendar.xlsx</code>!</li>
 			  	<li>Downloaded <code>plant1.accdb</code>!</li>
-			  	<li>Interesting Datasets. Developer can work with this until there is a better dataset, but is a good starting point!</li>
+			  	<li>Interesting Datasets. I can work with this until there is a better dataset, but is a good starting point!</li>
 			</ul> 
 
 			<p>Have to find a way to connect database with ruby on rails application!</p>
@@ -420,10 +420,97 @@
 			<br>
 
 			<ul>
-				<li>Create a new table to hold new information regarding plants!</li>
+				<li>Altered the <code>plants</code> table to hold new information.</li>
 				<li>At the moment user must manually add plants in the database! <i>HAVE TO FIND A WAY TO AUTOMATE THE PROCESS OF ADDING PLANTS SINCE THERE ARE 150 PLANTS IN THE DATASET.</i></li>
 				<li>Modified the show page to be more attractive since there are a lot of new attributes for each plant.</li>
 				<li>Created a canvas to demonstrate an interactive pH spectrum! Requires two inputs to show a range of the preferred pH of each plant! Demo can be found in the following <a href="https://editor.p5js.org/eeu9052/sketches/rVxnarYxX">link</a>!</li>
+			</ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase D -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFive">
+      <button class="accordion-button bg-secondary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        <h4 class="text-white">Phase D (1-08 May 2021): Add 140 plants to database on production side!</h4>
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+		<div class="accordion-body">
+
+      		<h3 class="card-title">1. <code>p5.js</code> & <code>Bootstrap Icons</code> Libraries </h3>
+		
+			<br>
+
+       		<ul>
+			  	<li>Created a canvas to demonstrate an interactive pH spectrum!</li>
+			  	<li>Requires two inputs to show a range of the preferred pH of each plant!</li>
+			  	<li>A demonstration of the interactive pH spectrum is provided below using the values <code>{ "MIN": 3.1, "MAX": 6.9 }</code></li>
+			  	<li>Introduced Bootstrap Icons library which allows nicely designed icons to be added in the website such as: <i class="bi bi-archive-fill text-warning"></i>,  <i class="bi bi-bell-fill text-primary"></i>,  <i class="bi bi-key-fill text-danger"></i>  !</li>
+			</ul> 
+
+			<!-- Draw pH Spectrum showing minimum and maximum pH levels -->
+          	<%= render 'plants/javascripts/ph_spectrum' %>
+
+			<hr>
+			<br>
+			
+			<h3 class="card-title">2. Minified the Show Plants Table</h3>
+			
+			<br>
+			<ul>
+				<li>Altered the <code>plants</code> table to hold the new information.</li>
+				<li><code>plant</code> Table Columns are:</li>
+				<ul>
+					<li class="text-muted">ID (hidden field)</li>
+					<li class="text-muted">Created at (hidden field)</li>
+					<li class="text-muted">Updated at (hidden field)</li>
+					<li class="text-muted">Created By User ID (hidden field)</li>
+					<li>Taxonomic Name</li>
+					<li>Common Name</li>
+					<li>Cultivation Group</li>
+					<li>General Description</li>
+					<li>Nutritional Information</li>
+					<li>MIN preferred pH Level</li>
+					<li>MAX preferred pH Level</li>
+					<li>Water Requirements</li>
+					<li>Enerthy Value</li>
+					<li>Sunlight Requirements</li>
+					<li>Temperature Class</li>
+					<li>Nutrient Requirements</li>
+					<li>Plant Requirements</li>
+					<li>Soil</li>
+					<li>Optimum Germination Temperature</li>
+					<li>MIN Plant Growing Ideal Temperature</li>
+					<li>MAX Plant Growing Ideal Temperature</li>
+					<li>Descriptive Growing Season</li>
+					<li>MIN Length of Growing Harvest</li>
+					<li>MAX Length of Growing Harvest</li>
+					<li>Sensitivities</li>
+					<li>Desease Management</li>
+					<li>Pests and Pathogens</li>
+					<li>Image</li>
+				</ul>
+
+				<li>Minified the styling of the show table</li>
+				<li>The <code>show</code> page now will display the following columns</li>
+				<ul>
+					<li>ID</li>
+					<li>Taxonomic Name</li>
+					<li>Common Name</li>
+					<li>Cultivation Group</li>
+					<li>Temperature Class</li>
+					<li>Water Requirements</li>
+					<li>Nutritional Information</li>
+					<li>Image</li>
+					<li>a link to show the rest of the information regarding the plant</li>
+					<li>a link to delete plant from the database</li>
+				</ul>
+				<li>Must redesign how the rows are displayd!</li>
+				<li>Table should be able to show data per pages (i.e. view only 10 plants, click <code>next (button)</code> to show another 10)</li>
+				<li>This will maintain the page as less data will be loaded from the database! Would make the website faster!</li>
+				<li>User should be able to sort table as they wish (i.e. by id or by alphabetical order)!</li>
 			</ul>
       </div>
     </div>
