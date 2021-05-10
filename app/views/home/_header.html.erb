@@ -58,11 +58,3 @@
     </div>
   </div>
 </nav>
-
-<% if user_signed_in? %> 
-  <% if current_user.isAdmin? %>
-    The user is an admministrator
-  <% else %>
-    The user is NOT an administrator
-  <% end %>
-<% end %> 

@@ -1,3 +1,11 @@
+<% if user_signed_in? %> 
+  <% if current_user.isAdmin? %>
+    The user is an admministrator
+  <% else %>
+    The user is NOT an administrator
+  <% end %>
+<% end %> 
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -7,24 +15,29 @@
       <h4>Edit Profile</h4>
     </div>
     <div class="card-body">
-      <div class="field form-group mb-3">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email", required:true %>
+
+      <div class="field form-group mb-3 form-floating">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"floatingInput1", placeholder:"Email", required:true %>
+        <label class="text-muted" for="floatingInput1">Email</label>
       </div>
 
-      <div class="field form-group mb-3">
-        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", placeholder:"Current Password (we need your current password to confirm your changes)", required:true %>
+      <div class="field form-group mb-3 form-floating">
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control", id:"floatingInput2", placeholder:"Current Password (we need your current password to confirm your changes)", required:true %>
+        <label class="text-muted" for="floatingInput2">Current Password (we need your current password to confirm your changes)</label>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
-      <div class="field form-group mb-3">
-        <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"New Password (leave blank if you don't want to change it)", required:true %>
+      <div class="field form-group mb-3 form-floating">
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control", id:"floatingInput3", placeholder:"New Password (leave blank if you don't want to change it)", required:true %>
+        <label class="text-muted" for="floatingInput3">New Password (leave blank if you don't want to change it)</label>
       </div>
 
-      <div class="field form-group mb-3">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Password Confirmation", required:true %>
+      <div class="field form-group mb-3 form-floating">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", id:"floatingInput4", placeholder:"Password Confirmation", required:true %>
+        <label class="text-muted" for="floatingInput4">Password Confirmation</label>
       </div>
 
       <div class="actions form-group">
@@ -44,7 +57,51 @@
   </div>
   <div class="card-body">
      <h5 class="card-title">Once you delete your account, it is permanently deleted from the database and cannot be restored!</h5>
-    <p><%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:"btn btn-danger", :style => 'width: -webkit-fill-available' %></p>
+    <button class="btn btn-danger" style="width:-webkit-fill-available" onclick="
+
+        //prepare delete account URL 
+        var redirect = '<%= registration_path(resource_name) %>';
+
+        //Show alert for deleting an account
+        Swal.fire({
+          title: 'Are you sure you want to delete your account?',
+          text: 'Once your account has been deleted you cannot retrieve it!',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          //IF DELETE
+          if(result.isConfirmed){
+            Swal.fire(
+              'Deleted!',
+              'We hope to see you soon!',
+              'success'
+            );
+            
+            Rails.ajax({
+                type: 'DELETE',
+                url: redirect,
+                success: function(response){ 
+                  //Account has been deleted!
+                },
+                error: function(response){ 
+                  //Error with Ajax
+                  alert('error with AJAX DELETE request:\n' + response) 
+                }
+              });
+          }
+          //IF Cancel
+          else{
+            Swal.fire(
+              'Cancelled!',
+              'Your account is still active!',
+              'error'
+            );
+          }
+        })
+      ">Delete my account</button>
   </div>
 </div>
 

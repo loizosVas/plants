@@ -5,12 +5,14 @@
       <h4>Log In</h4>
     </div>
     <div class="card-body">
-      <div class="field form-group mb-3">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email", required:true %>
+      <div class="field form-group mb-3 form-floating">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"floatingInput1", placeholder:"Email???", required:true %>
+        <label class="text-muted" for="floatingInput1">Email</label>
       </div>
 
-      <div class="field form-group mb-3">
-        <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"Password", required:true %>
+      <div class="field form-group mb-3 form-floating">
+        <%= f.password_field :password, autocomplete: "current-password", class:"form-control", id:"floatingInput2", placeholder:"Password", required:true %>
+        <label class="text-muted" for="floatingInput2">Password</label>
       </div>
 
       <% if devise_mapping.rememberable? %>

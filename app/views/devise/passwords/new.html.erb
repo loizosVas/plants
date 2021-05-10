@@ -7,8 +7,9 @@
 	    <h4>Forgot your password?</h4>
 	  </div>
 	  <div class="card-body">
-	      <div class="field form-group mb-3">
-	        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email", required:true %>
+	      <div class="field form-group mb-3 form-floating">
+	        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"floatingInput1", placeholder:"Email", required:true %>
+	        <label class="text-muted" for="floatingInput1">Email</label>
 	      </div>
 
     	  <div class="actions">

@@ -7,16 +7,19 @@
       <h4>Sign-Up</h4>
     </div>
     <div class="card-body">
-      <div class="field form-group mb-3">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
+      <div class="field form-group mb-3 form-floating">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"floatingInput1", placeholder:"Email", required:true %>
+        <label class="text-muted" for="floatingInput1">Email</label>
       </div>
 
-      <div class="field form-group mb-3">
-        <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Password" %>
+      <div class="field form-group mb-3 form-floating">
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control", id:"floatingInput2", placeholder:"Password", required:true %>
+        <label class="text-muted" for="floatingInput2">Password</label>
       </div>
 
-      <div class="field form-group mb-3">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Confirm Password" %>
+      <div class="field form-group mb-3 form-floating">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", id:"floatingInput3", placeholder:"Confirm Password", required:true %>
+        <label class="text-muted" for="floatingInput3">Confirm Password</label>
       </div>
 
       <div class="actions">

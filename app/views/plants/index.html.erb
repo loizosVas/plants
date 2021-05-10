@@ -28,13 +28,72 @@
             <td><%= plant.water_requirements %></td>
             <td><%= plant.nutritional_information %></td>
             <td>
-              <img src="data:image/jpeg;base64,<%= plant.image %>" style="width:100px; height:auto;">
+              <!-- CHECK IF IMAGE IS NOT EMPTY -->
+              <%if plant.image != "" %>
+                <img src="data:image/jpeg;base64,<%= plant.image %>" style="width:100px; height:auto;">
+              <%end%>
             </td>
             <td>
                 <%= link_to '', plant, class:"bi bi-eye-fill text-primary visible" %>
             </td>
             <td>
-              <%= link_to '', plant, method: :delete, data: { confirm: 'delete' }, class:"bi bi-trash-fill text-danger visible" %>
+
+              <a class="bi bi-trash-fill text-danger visible" style="cursor:pointer" onclick="
+
+                //prepare plant URL 
+                var redirect = '<%= plants_path %>/<%= plant.id %>';
+
+                //Check if name of plant is empty
+                let plantName = '<%= plant.common_name %>';
+                if(plantName == ''){
+                  plantName = '(NO-NAME)';
+                }else{
+                  let temp = '('+plantName+')';
+                  plantName = temp;;
+                }
+
+                //Show alert for deleting a plant
+                Swal.fire({
+                  title: 'Are you sure you want to delete '+plantName+' from your list?',
+                  text: 'You won\'t be able to revert this!',
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                  //IF DELETE
+                  if(result.isConfirmed){
+                    Swal.fire(
+                      'Deleted!',
+                      'The plant '+plantName+' has been deleted.',
+                      'success'
+                    );
+                    
+                    Rails.ajax({
+                        type: 'DELETE',
+                        url: redirect,
+                        success: function(response){ 
+                          //Plant has been deleted!
+                        },
+                        error: function(response){ 
+                          //Error with Ajax
+                          alert('error with AJAX DELETE request:\n' + response) 
+                        }
+                      });
+                  }
+                  //IF Cancel
+                  else{
+                    Swal.fire(
+                      'Cancelled!',
+                      'The plant '+plantName+' remains on your list.',
+                      'error'
+                    );
+                  }
+                })
+              "></a>
+
+              <%#= link_to '', plant, method: :delete, data: { confirm: 'delete' }, class:"bi bi-trash-fill text-danger visible" %>
             </td>
           </tr>
         <% end %>
@@ -45,3 +104,5 @@
 <br>
 
 <%= link_to 'New Plant', new_plant_path, class:"btn btn-primary" %>
+
+
